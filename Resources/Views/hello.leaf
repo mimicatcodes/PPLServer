@@ -1,0 +1,8 @@
+#extend("base")
+#export("body") {
+<head></head>
+<body>
+    <h1>Hello #(greeting)</h1>
+    #loop(worlds, "world") { <li>Hello #(world)</li> }
+</body>
+}
