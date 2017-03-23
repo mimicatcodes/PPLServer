@@ -1,0 +1,56 @@
+#extend("base")
+
+#export("body") {
+
+    <div class="row">
+        <div class="u-full-width">
+            <h5>Add New Person</h5>
+        </div>
+    </div>
+
+    <form action="/people" method="post">
+        <div class="row">
+            <div class="four columns">
+                <label>Name</label>
+                <input name="name" class="u-full-width" placeholder="Robert" />
+            </div>
+            <div class="six columns">
+                <label>Favorite City</label>
+                <input name="favoritecity" class="u-full-width" placeholder="Long Island" />
+            </div>
+            <div class="two columns">
+                <input class="button-primary" type="submit" value="Add Person" />
+            </div>
+        </div>
+    </form>
+
+<table class="u-full-width">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Favorite City</th>
+        </tr>
+    </thead>
+</table>
+
+#loop(persons, "person") {
+    <div class="row">
+        <div class="one column">
+            <p><span>#(person.id)</span></p>
+        </div>
+        <div class="three columns">
+            <p><span>#(person.name)</span></p>
+        </div>
+        <div class="six columns">
+            <p><span>#(person.favoritecity)</span></p>
+        </div>
+        <div class="one column">
+            <form action="/people/#(person.id)/delete" method="post">
+                <input type="submit" value="Delete" />
+            </form>
+        </div>
+    </div>
+    }
+}
+

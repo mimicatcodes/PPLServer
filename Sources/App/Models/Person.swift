@@ -18,6 +18,7 @@ final class Person: Model {
     var favorite_city: String
     
     init(name:String, favorite_city:String) {
+        self.id = nil
         self.name = name
         self.favorite_city = favorite_city
     }
@@ -37,10 +38,10 @@ final class Person: Model {
     }
     
     static func prepare(_ database: Database) throws {
-        try database.create("persons") { (blogposts) in
-            blogposts.id()
-            blogposts.string("name")
-            blogposts.string("favoritecity")
+        try database.create("persons") { (users) in
+            users.id()
+            users.string("name")
+            users.string("favoritecity")
         }
     }
     
