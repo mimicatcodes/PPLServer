@@ -10,9 +10,9 @@ drop.preparations += Person.self
 
 (drop.view as? LeafRenderer)?.stem.cache = nil
 
-/*
+
 let basic = BasicController()
-basic.addRoutes(drop: drop)*/
+basic.addRoutes(drop: drop)
 
 drop.get("people", Int.self) { request, id in
     guard let person = try Person.query().filter("id", id).first() else {

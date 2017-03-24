@@ -18,7 +18,7 @@ final class BasicController {
         drop.get("model", handler: model)
         drop.get("test", handler: test)
         drop.get("new", handler: new)
-        drop.get("all", handler: all)
+        drop.get("people", handler: people)
         drop.get("delete-first", handler: deleteFirst)
     }
   
@@ -52,7 +52,7 @@ final class BasicController {
         return person
     }
     
-    func all(request: Request) throws -> ResponseRepresentable {
+    func people(request: Request) throws -> ResponseRepresentable {
         return try JSON(node: Person.all().makeNode())
     }
     
