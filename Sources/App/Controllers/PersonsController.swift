@@ -52,7 +52,6 @@ final class PersonsController : ResourceRepresentable {
     }
 }
 
-
 extension Request {
     func person() throws -> Person {
         guard let json = json else { throw Abort.badRequest }

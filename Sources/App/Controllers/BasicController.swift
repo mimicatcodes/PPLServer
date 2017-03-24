@@ -11,7 +11,6 @@ import Vapor
 import HTTP
 import VaporPostgreSQL
 
-
 final class BasicController {
     
     func addRoutes(drop: Droplet) {
@@ -23,7 +22,6 @@ final class BasicController {
         drop.get("delete-first", handler: deleteFirst)
     }
   
-    
     func version(request: Request) throws -> ResponseRepresentable {
         if let db = drop.database?.driver as? PostgreSQLDriver {
             let version = try db.raw("SELECT version()")
@@ -58,15 +56,14 @@ final class BasicController {
         return try JSON(node: Person.all().makeNode())
     }
     
-//    func deleteCity(request: Request) throws -> ResponseRepresentable {
-//        let query = try Person.query().filter("favoritecity", "Shanghai")
-//        try query.delete()
-//        return try JSON(node: Person.all().makeNode())
-//
-//    }
+    /*
+    func all(request: Request, id: Int) throws -> ResponseRepresentable {
+        guard let person = try Person.query().filter("id", id).first() else { return "No person found"}
+        return try person.makeJSON()
+    }*/
     
     func deleteFirst(request: Request) throws -> ResponseRepresentable {
-        guard var firstPerson = try Person.query().first() else { throw Abort.badRequest }
+        guard let firstPerson = try Person.query().first() else { throw Abort.badRequest }
         try firstPerson.delete()
         return firstPerson
     }
@@ -80,27 +77,5 @@ final class BasicController {
         first.favorite_city = city
         try first.save()
         return first
-        
     }
-    
-    
-//    
-//    drop.get("hello") { req in
-//    return try drop.view.make("hello")
-//    //look for a leaf template named hello.leaf and present it to the user
-//    }
-//    
-//    drop.get("helloworld") { req in
-//    let greetings = ["Mundo", "Monde", "Welt"]
-//    return try drop.view.make("hello", ["greeting": "World", "worlds": greetings.makeNode()])
-//    }
-//    
-//    drop.get("wing") { req in
-//    return try JSON(node:Person.query().filter("name", "Wing").all().makeNode())
-//    }
-//    
-//    drop.get("not-wing") { req in
-//    return try JSON(node: Person.query().filter("name", .notEquals, "Wing").all().makeNode())
-//    }
-
 }
