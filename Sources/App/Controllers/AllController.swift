@@ -1,5 +1,5 @@
 //
-//  PeopleController.swift
+//  AllController.swift
 //  helloPeople
 //
 //  Created by Luna An on 3/22/17.
@@ -10,11 +10,11 @@ import Foundation
 import Vapor
 import HTTP
 
-final class PeopleController {
+final class AllController {
     func addRoutes(drop:Droplet) {
-        drop.get("people", handler: indexView)
-        drop.post("people", handler: addPerson)
-        drop.post("people", Person.self, "delete", handler: deletePerson)
+        drop.get("all", handler: indexView)
+        drop.post("all", handler: addPerson)
+        drop.post("all", Person.self, "delete", handler: deletePerson)
     }
     
     func indexView(request: Request) throws -> ResponseRepresentable {
@@ -32,11 +32,11 @@ final class PeopleController {
         var person = Person(name: name, favorite_city: city)
         try person.save()
         
-        return Response(redirect: "/people")
+        return Response(redirect: "/all")
     }
     
     func deletePerson(request: Request, person: Person) throws -> ResponseRepresentable {
         try person.delete()
-        return Response(redirect: "/people")
+        return Response(redirect: "/all")
     }
 }

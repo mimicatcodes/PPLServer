@@ -27,6 +27,16 @@ final class PersonsController : ResourceRepresentable {
         return person
     }
     
+    func replace(request: Request, post: Post) throws -> ResponseRepresentable {
+        try post.delete()
+        return try create(request: request)
+    }
+    
+    func clear(request: Request) throws -> ResponseRepresentable {
+        try Post.query().delete()
+        return JSON([])
+    }
+    
     func update(request: Request, person: Person) throws -> ResponseRepresentable {
         let new = try request.person()
         var person = person
@@ -46,8 +56,10 @@ final class PersonsController : ResourceRepresentable {
             index: index,
             store: create,
             show: show,
+            replace: update,
             modify: update,
-            destroy: delete
+            destroy: delete,
+            clear: clear
         )
     }
 }

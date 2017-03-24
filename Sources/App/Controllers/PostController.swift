@@ -38,6 +38,8 @@ final class PostController: ResourceRepresentable {
         try post.delete()
         return try create(request: request)
     }
+    
+    
 
     func makeResource() -> Resource<Post> {
         return Resource(
