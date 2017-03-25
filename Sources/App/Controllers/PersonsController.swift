@@ -27,8 +27,8 @@ final class PersonsController : ResourceRepresentable {
         return person
     }
     
-    func replace(request: Request, post: Post) throws -> ResponseRepresentable {
-        try post.delete()
+    func replace(request: Request, person: Person) throws -> ResponseRepresentable {
+        try person.delete()
         return try create(request: request)
     }
     

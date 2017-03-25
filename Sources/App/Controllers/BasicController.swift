@@ -56,12 +56,6 @@ final class BasicController {
         return try JSON(node: Person.all().makeNode())
     }
     
-    /*
-    func all(request: Request, id: Int) throws -> ResponseRepresentable {
-        guard let person = try Person.query().filter("id", id).first() else { return "No person found"}
-        return try person.makeJSON()
-    }*/
-    
     func deleteFirst(request: Request) throws -> ResponseRepresentable {
         guard let firstPerson = try Person.query().first() else { throw Abort.badRequest }
         try firstPerson.delete()
