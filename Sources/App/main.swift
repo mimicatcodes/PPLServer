@@ -24,7 +24,7 @@ drop.get("people", Int.self) { request, id in
 let persons = PersonsController()
 drop.resource("people", persons)
 
-//let controller = PeopleController()
-//controller.addRoutes(drop: drop)
+let controller = AllController()
+controller.addRoutes(drop: drop)
 
 drop.run()
