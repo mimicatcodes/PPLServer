@@ -51,6 +51,11 @@ final class PersonsController : ResourceRepresentable {
         return JSON([:])
     }
     
+    func delete(request: Request, post: Post) throws -> ResponseRepresentable {
+        try post.delete()
+        return JSON([:])
+    }
+    
     func makeResource() -> Resource<Person> {
         return Resource(
             index: index,
