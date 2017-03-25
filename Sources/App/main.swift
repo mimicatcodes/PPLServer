@@ -14,14 +14,6 @@ drop.preparations += Person.self
 let basic = BasicController()
 basic.addRoutes(drop: drop)
 
-/*
-drop.get("people", Int.self) { request, id in
-    guard let person = try Person.query().filter("id", id).first() else {
-        return "No person found"
-    }
-    return try person.makeJSON()
-}*/
-
 let persons = PersonsController()
 drop.resource("people", persons)
 
