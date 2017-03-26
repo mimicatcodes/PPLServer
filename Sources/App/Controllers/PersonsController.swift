@@ -33,7 +33,7 @@ final class PersonsController : ResourceRepresentable {
     }
     
     func clear(request: Request) throws -> ResponseRepresentable {
-        try Post.query().delete()
+        try Person.query().delete()
         return JSON([])
     }
     
@@ -50,11 +50,11 @@ final class PersonsController : ResourceRepresentable {
         try person.delete()
         return JSON([:])
     }
-    
+    /*
     func delete(request: Request, post: Post) throws -> ResponseRepresentable {
         try post.delete()
         return JSON([:])
-    }
+    }*/
     
     func makeResource() -> Resource<Person> {
         return Resource(

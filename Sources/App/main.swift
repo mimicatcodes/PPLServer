@@ -10,7 +10,6 @@ drop.preparations += Person.self
 
 (drop.view as? LeafRenderer)?.stem.cache = nil
 
-
 let basic = BasicController()
 basic.addRoutes(drop: drop)
 
