@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="u-full-width">
-                <h2>People and the City</h2>
+                <h2>Welcome to PPL!</h2>
             </div>
         </div>
 #import("body")
