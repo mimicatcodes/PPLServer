@@ -2,7 +2,7 @@
 <html>
 <head>
     #import("head")
-    <title>People and the City</title>
+    <title>PPL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/normalize.css">
             <link rel="stylesheet" href="/styles/skeleton.css">

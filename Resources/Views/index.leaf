@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <form action="/people" method="post">
+    <form action="/all" method="post">
         <div class="row">
             <div class="four columns">
                 <label>Name</label>
@@ -46,7 +46,7 @@
             <p><span>#(person.favoritecity)</span></p>
         </div>
         <div class="one column">
-            <form action="/people/#(person.id)/delete" method="post">
+            <form action="/all/#(person.id)/delete" method="post">
                 <input type="submit" value="Delete" />
             </form>
         </div>
