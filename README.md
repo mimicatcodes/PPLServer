@@ -33,3 +33,4 @@ PPL is a completely open API. No authentication is required to retrieve/post/upd
 **JSON**  
 JSON is the data format provided by PPL.
 
+** This Readme will be updated with detailed instructons on how to make HTTP requests.**
