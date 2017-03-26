@@ -32,7 +32,7 @@ final class BasicController {
     }
     
     func model(request: Request) throws -> ResponseRepresentable {
-        let person = Person(name: "Joyce", favorite_city: "Brooklyn")
+        let person = Person(name: "Sean", favorite_city: "Brooklyn")
         return try person.makeJSON()
     }
     
@@ -41,7 +41,7 @@ final class BasicController {
     }
     
     func test(request: Request) throws -> ResponseRepresentable {
-        var person = Person(name: "Luna", favorite_city: "Paris")
+        var person = Person(name: "Luna", favorite_city: "New York City")
         try person.save()
         return try JSON(node:Person.all().makeNode())
     }
