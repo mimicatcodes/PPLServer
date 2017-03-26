@@ -1,19 +1,35 @@
-<<<<<<< HEAD
-# Basic Template
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+Welcome to <strong>PPL</strong> RESTful API! This documentation should help you familiarize yourself with the resources available and how to consume them with HTTP requests.
 
-## 📖 Documentation
+# About the PPL Server
+Created with Vapor, Skeleton, PostgreSQL ( + ❤︎) and deployed to Heroku, the PPL Server is a free RESTful API that you can use JSON data for various projects and purposes.
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+## How to use the PPL RESTful API
 
-## 💧 Community
+The Base URL for PPL is:
 
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
+     https://gentle-ocean-61971.herokuapp.com/
 
-## 🔧 Compatibility
+**Endpoints:**  
+  - /people	:  get all the people resources  
+  - /people/ :  id : get a specific people resource  
+  - /all :  admin page for adding and deleting persons into the database  
 
-This package has been tested on macOS and Ubuntu.
-=======
-# PPLServer
->>>>>>> 6b205a5cd90af1530c4f113eba1fef314686aca7
+**Person Object**  
+**Attributes:**  
+  - id 			 		— Type Integer. The identifier of this person  
+  - name 		 		— Type String. The name of this person  
+  - favoritecity 		— Type String.The favorite city of this person  
+
+**Example request:**  
+https://gentle-ocean-61971.herokuapp.com/people/1    
+  
+**Example response:**  
+{“favoritecity”:”Brooklyn","id":1,"name":"Sean"}  
+  
+**Authentication**  
+PPL is a completely open API. No authentication is required to retrieve/post/update/delete data.
+
+**JSON**  
+JSON is the data format provided by PPL.
+
