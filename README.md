@@ -4,6 +4,8 @@ Welcome to <strong>PPL</strong> RESTful API! This documentation should help you 
 # About the PPL Server
 Created with Vapor, Skeleton, PostgreSQL ( + ❤︎) and deployed to Heroku, the PPL Server is a free RESTful API that you can use JSON data for various projects and purposes.
 
+* The database is currently empty. Please add your own data to test the server using the client app associated with this project.
+
 ## How to use the PPL RESTful API
 
 The Base URL for PPL is:
